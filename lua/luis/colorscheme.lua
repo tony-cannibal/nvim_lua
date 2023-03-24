@@ -1,15 +1,3 @@
-local color_chemes = {
-    "gruvbox-material",  -- 1
-    "everforest",        -- 2
-    "sonokai",           -- 3
-    "solarized",        -- 4
-    "komau",             -- 5
-    "gruvbox",           -- 6
-    "pywal",             -- 7
-    "xresources",        -- 8
-}
-
-local transparent = true
 
 --{{ Sonokai Styles
 --   'default'
@@ -19,6 +7,17 @@ local transparent = true
 --   'maia'
 --   'espresso'
 --}}
+
+local color_chemes = {
+    "base16-greenscreen",  -- 1
+    "everforest",        -- 2
+    "base16-gruvbox-dark-hard",           -- 3
+    "solarized",         -- 4
+    "komau",             -- 5
+    "gruvbox",           -- 6
+    "pywal",             -- 7
+    "xresources",        -- 8
+}
 
 function ColorScheme(color, trans)
 
@@ -68,6 +67,9 @@ end
 -- 7 = pywal
 -- 8 = xresources
 
-ColorScheme(color_chemes[4], transparent)
+
+local transparent = true
+
+ColorScheme(color_chemes[1], transparent)
 
 

@@ -52,6 +52,7 @@ return packer.startup(function(use)
 
     use {'sainnhe/everforest'}
     use { 'ishan9299/nvim-solarized-lua' }
+    use {'chriskempson/base16-vim'}
 
     use {
       'VonHeikemen/lsp-zero.nvim',
@@ -79,19 +80,24 @@ return packer.startup(function(use)
     use { "jay-babu/mason-null-ls.nvim" }
     use { "RRethy/vim-illuminate" }
 
-    use { 'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
-    use {'JoosepAlviste/nvim-ts-context-commentstring'}
+    --use { 'nvim-treesitter/nvim-treesitter',
+    --    run = function()
+    --        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+    --        ts_update()
+    --    end,
+    --}
+    -- use {'JoosepAlviste/nvim-ts-context-commentstring'}
+    use {'sheerun/vim-polyglot'}
+
     use {'norcalli/nvim-colorizer.lua'}
+    use { 'lewis6991/gitsigns.nvim', tag = 'release'}
     use {'petertriho/nvim-scrollbar'}
     use {'tpope/vim-fugitive'}
     use {"windwp/nvim-autopairs"}
 
-    use {'nvim-lualine/lualine.nvim'}
+    -- use {'nvim-lualine/lualine.nvim'}
+    use {"rebelot/heirline.nvim"}
+
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use {'goolord/alpha-nvim'}
     use {"folke/which-key.nvim"}

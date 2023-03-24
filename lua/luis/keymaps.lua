@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Do not yank with x
 keymap("n", "x", '"_x', opts)
+keymap("n", ";", ':', {})
 
 -- Icrease/Decrease
 keymap("n", "+", "<C-a>", opts)
