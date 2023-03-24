@@ -33,12 +33,11 @@ end
 -- Have packer use a popup window
 packer.init({
 	display = {
-		open_fn = function()
+	  open_fn = function()
             return require("packer.util").float({ border = "rounded" })
-		end,
+	  end,
 	},
 })
-
 
 return packer.startup(function(use)
     use {'wbthomason/packer.nvim'}
@@ -51,8 +50,10 @@ return packer.startup(function(use)
     use {'lewis6991/impatient.nvim'}
 
     use {'sainnhe/everforest'}
-    use { 'ishan9299/nvim-solarized-lua' }
+    use {'ishan9299/nvim-solarized-lua'}
     use {'chriskempson/base16-vim'}
+    use {'sainnhe/gruvbox-material'}
+    use {"ellisonleao/gruvbox.nvim"}
 
     use {
       'VonHeikemen/lsp-zero.nvim',
@@ -80,13 +81,13 @@ return packer.startup(function(use)
     use { "jay-babu/mason-null-ls.nvim" }
     use { "RRethy/vim-illuminate" }
 
-    --use { 'nvim-treesitter/nvim-treesitter',
-    --    run = function()
-    --        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-    --        ts_update()
-    --    end,
-    --}
-    -- use {'JoosepAlviste/nvim-ts-context-commentstring'}
+    use { 'nvim-treesitter/nvim-treesitter',
+       run = function()
+           local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+           ts_update()
+       end,
+    }
+    use {'JoosepAlviste/nvim-ts-context-commentstring'}
     use {'sheerun/vim-polyglot'}
 
     use {'norcalli/nvim-colorizer.lua'}
