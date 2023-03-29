@@ -44,6 +44,7 @@ local color_chemes = {
     "solarized",        -- 3
     "gruvbox",          -- 4
     "gruvbox-material", -- 5
+    "custom"
 }
 
 local transparent = true

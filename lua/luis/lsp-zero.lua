@@ -111,7 +111,6 @@ end
 
 local null_opts = lsp.build_options("null-ls", {})
 
-
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"stylua",
@@ -149,7 +148,7 @@ null_ls.setup({
 })
 
 local config = {
-	virtual_text = true, -- disable virtual text
+	virtual_text = false, -- disable virtual text
 	signs = {
 		active = signs, -- show signs
 	},
