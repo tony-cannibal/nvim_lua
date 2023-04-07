@@ -39,7 +39,7 @@ function ColorScheme(color, trans)
 end
 
 local color_chemes = {
-    "greenscreen",      -- 1
+    "matrix",      -- 1
     "everforest",       -- 2
     "solarized",        -- 3
     "gruvbox",          -- 4
@@ -47,8 +47,8 @@ local color_chemes = {
     "custom"
 }
 
-local transparent = true
+local transparent = false
 
-ColorScheme(color_chemes[1], transparent)
+ColorScheme(color_chemes[4], transparent)
 
 

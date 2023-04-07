@@ -19,8 +19,12 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Do not yank with x
+
+keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>q", ":q<CR>", opts)
+
 keymap("n", "x", '"_x', opts)
-keymap("n", ";", ':', {})
+keymap("n", ";", ":", {})
 
 -- Icrease/Decrease
 keymap("n", "+", "<C-a>", opts)
@@ -40,7 +44,7 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 -- keymap("n", "<leader>c", ":bd<CR>", opts)
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
 
--- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Normal --
 -- Better window navigation

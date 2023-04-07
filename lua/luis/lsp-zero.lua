@@ -98,54 +98,66 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
+lsp.on_attach(function(client, bufnr)
+	lsp.default_keymaps({ buffer = bufnr })
+end)
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
+lsp.format_on_save({
+	format_opts = {
+		timeout_ms = 10000,
+	},
+	servers = {
+		["null-ls"] = { "javascript", "typescript", "lua" },
+	},
+})
+
 lsp.setup()
 
-local status_null_ls, null_ls = pcall(require, "null-ls")
-if not status_null_ls then
-	return
-end
--- local null_ls = require 'null-ls'
-
-local null_opts = lsp.build_options("null-ls", {})
-
-require("mason-null-ls").setup({
-	ensure_installed = {
-		"stylua",
-		"black",
-		"prettier",
-		"flake8",
-		"autopep8",
-	},
-})
-
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
-
-null_ls.setup({
-	on_attach = function(client, bufnr)
-		null_opts.on_attach(client, bufnr)
-		lsp_keymaps(bufnr)
-
-		-- local satus_ok, illuminate = pcall(require, "illuminate")
-		-- if not satus_ok then
-		--     return
-		-- end
-		-- illuminate.on_attach(client)
-	end,
-	debug = false,
-	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
-		formatting.autopep8,
-		diagnostics.flake8,
-	},
-})
+-- local status_null_ls, null_ls = pcall(require, "null-ls")
+-- if not status_null_ls then
+-- 	return
+-- end
+-- -- local null_ls = require 'null-ls'
+--
+-- local null_opts = lsp.build_options("null-ls", {})
+--
+-- require("mason-null-ls").setup({
+-- 	ensure_installed = {
+-- 		"stylua",
+-- 		"black",
+-- 		"prettier",
+-- 		"flake8",
+-- 		"autopep8",
+-- 	},
+-- })
+--
+-- -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+-- local formatting = null_ls.builtins.formatting
+-- -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
+--
+-- null_ls.setup({
+-- 	on_attach = function(client, bufnr)
+-- 		null_opts.on_attach(client, bufnr)
+-- 		lsp_keymaps(bufnr)
+--
+-- 		-- local satus_ok, illuminate = pcall(require, "illuminate")
+-- 		-- if not satus_ok then
+-- 		--     return
+-- 		-- end
+-- 		-- illuminate.on_attach(client)
+-- 	end,
+-- 	debug = false,
+-- 	sources = {
+-- 		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+-- 		formatting.black.with({ extra_args = { "--fast" } }),
+-- 		formatting.stylua,
+-- 		formatting.autopep8,
+-- 		diagnostics.flake8,
+-- 	},
+-- })
 
 local config = {
 	virtual_text = false, -- disable virtual text
