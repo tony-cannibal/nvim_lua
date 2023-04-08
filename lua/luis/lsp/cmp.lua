@@ -14,7 +14,7 @@ local cmp_action = require("lsp-zero").cmp_action()
 
 local border_opts = {
 	border = "single",
-	winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+	winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None",
 }
 
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
@@ -26,7 +26,7 @@ cmp.setup({
 		documentation = cmp.config.window.bordered({
 			max_height = 15,
 			max_width = 60,
-			border = "rounded",
+			border = "single",
 			col_offset = 0,
 			side_padding = 1,
 			winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None",

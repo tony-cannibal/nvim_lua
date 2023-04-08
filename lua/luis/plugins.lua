@@ -33,7 +33,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
+			return require("packer.util").float({ border = "single" })
 		end,
 	},
 })
@@ -79,6 +79,11 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "jay-babu/mason-null-ls.nvim" })
 	use({ "onsails/lspkind.nvim" })
+
+	-- use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "jay-babu/mason-nvim-dap.nvim" })
+
 	use({ "RRethy/vim-illuminate" })
 
 	use({
@@ -92,7 +97,7 @@ return packer.startup(function(use)
 	use({ "sheerun/vim-polyglot" })
 
 	use({ "norcalli/nvim-colorizer.lua" })
-	use({ "lewis6991/gitsigns.nvim", tag = "release" })
+	use({ "lewis6991/gitsigns.nvim" })
 	use({ "petertriho/nvim-scrollbar" })
 	use({ "tpope/vim-fugitive" })
 	use({ "windwp/nvim-autopairs" })

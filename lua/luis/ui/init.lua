@@ -1,0 +1,7 @@
+require("luis.ui.colorscheme")
+require("luis.ui.scrollbar")
+require("luis.ui.alpha")
+require("luis.ui.heirline")
+require("luis.ui.bufferline")
+require("luis.ui.gitsigns")
+require("luis.ui.colorizer")

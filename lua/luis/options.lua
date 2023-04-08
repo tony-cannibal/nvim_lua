@@ -16,7 +16,7 @@ vim.opt.smartindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
---vim.opt.timeoutlen = 100
+vim.opt.timeoutlen = 100
 vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.writebackup = false
@@ -34,9 +34,8 @@ vim.opt.colorcolumn = "80"
 vim.opt.laststatus = 3
 
 vim.opt.winblend = 0
-vim.opt.wildoptions = 'pum'
+vim.opt.wildoptions = "pum"
 vim.opt.pumblend = 5
-
 
 -- vim.opt.listchars:append "space:⋅"
 -- vim.opt.listchars:append "eol:↴"

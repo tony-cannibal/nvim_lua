@@ -13,7 +13,11 @@ null_ls.setup({
 -- See mason-null-ls.nvim's documentation for more details:
 -- https://github.com/jay-babu/mason-null-ls.nvim#setup
 require("mason-null-ls").setup({
-	ensure_installed = nil,
+	ensure_installed = {
+		"lua-ls",
+		"autopep8",
+		"pylama",
+	},
 	automatic_installation = false, -- You can still set this to `true`
 	automatic_setup = true,
 })
